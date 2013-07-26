@@ -47,3 +47,4 @@ gem 'jquery-rails'
 # gem 'debugger'
 
 gem 'figaro'
+gem 'thin'
