@@ -2,7 +2,7 @@ require 'open-uri'
 
 class FbVideo
 
-  FB_URL = URI::encode("https://graph.facebook.com/170901143077174/feed?access_token=#{ENV['FB_APP_TOKEN']}")
+  FB_URL = URI::encode("https://graph.facebook.com/170901143077174?fields=posts.limit(100).fields(source,name,type)&access_token=#{ENV['FB_APP_TOKEN']}&limit=100")
 
   def json_response
     response = open(FB_URL).read
@@ -10,7 +10,7 @@ class FbVideo
   end
 
   def get_videos
-    json_response['data'].select { |p| p['type'] == 'video' && p['source'] != nil }
+    json_response['posts']['data'].select { |p| p['type'] == 'video' && p['source'] =~ /mp4/ }
   end
 
   def list
@@ -18,7 +18,6 @@ class FbVideo
       {
         source: v['source'],
         name: v['name'],
-        poster: v['from']['name'],
         ts: v['created_time']
       }
     end

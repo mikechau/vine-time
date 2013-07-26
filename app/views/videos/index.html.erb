@@ -1,7 +1,7 @@
 <div class="container-fluid">
 
-<% @videos.each do |v| %>
-  <div class="row-fluid">
+<% @videos.each_with_index do |v, idx| %>
+  <div class="row-fluid" id="<%= idx %>" class="video-container" >
     <div class="span12 well">
       <div class="well">
       <h2><%= v[:name] %></h2>
