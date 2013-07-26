@@ -2,7 +2,7 @@ require 'open-uri'
 
 class FbVideo
 
-  FB_URL = URI::encode("https://graph.facebook.com/170901143077174?fields=posts.limit(100).fields(source,name,type)&access_token=#{ENV['FB_APP_TOKEN']}&limit=100")
+  FB_URL = URI::encode("https://graph.facebook.com/170901143077174?fields=posts.limit(100).fields(source,name,type)&access_token=#{ENV['FB_APP_TOKEN']}&limit=30")
 
   def json_response
     response = open(FB_URL).read
