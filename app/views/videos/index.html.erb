@@ -24,11 +24,14 @@
             <source type="video/mp4" src="<%= v[:source] %>" />
             <object width="400" height="400" type="application/x-shockwave-flash" data="flashmediaelement.swf">
               <param name="movie" value="flashmediaelement.swf" />
-              <param name="flashvars" value="controls=true&file=<%=v[:source] %>" />
+              <param name="flashvars" value="controls=true&file=<%= v[:source] %>" />
             </object>
           </video>
         </div>
       </div>
+      <% if idx == 0 %>
+        <h6 class="note"><span class="alert">You can slide across videos by using your left or right arrow key!</span></h6>
+      <% end %>
     </div><!-- /container -->
   <% end %>
 
@@ -40,19 +43,27 @@
 </div><!-- /container-fluid-->
 
 <script>
-  // using jQuery
 
   $(document).ready(function() {
+
    $('.carousel').carousel('pause');
    $("span.localtime").localtime();
-   $('video,audio').mediaelementplayer(/* Options */);
+   $('video,audio').mediaelementplayer();
+
+   function pauseVideo() {
+     $('video,audio').each(function() {
+       $(this)[0].pause();
+     });
+   };
 
    jQuery(document).bind('keyup', function(e) {
 
       if(e.keyCode==39){
+        pauseVideo();
         jQuery('a.carousel-control.right').trigger('click');
       } 
       else if (e.keyCode==37){
+        pauseVideo();
         jQuery('a.carousel-control.left').trigger('click');
       }
     });
