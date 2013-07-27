@@ -1,5 +1,6 @@
 <div class="container-fluid">
 
+<div class="row-fluid">
 <div id="myCarousel" class="carousel slide">
 <!--   <ol class="carousel-indicators">
     <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
@@ -9,11 +10,13 @@
 
   <!-- Carousel item -->
   <div class="carousel-inner">
+  
   <% @videos.each_with_index do |v, idx| %>
     <% type = 'item' %>
     <% if idx == 0 %>
       <% type = 'active item' %>
     <% end %>
+
     <div class="container <%= type %>" id="<%= idx %>" >
       <div class="span12 well">
         <div class="well">
@@ -31,14 +34,14 @@
           </video>
         </div>
       </div>
-
-    </div><!-- /row-fluid -->
+    </div><!-- /container -->
   <% end %>
+
   </div><!-- /carousel inner-->
   <a class="carousel-control left" href="#myCarousel" data-slide="prev">&lsaquo;</a>
   <a class="carousel-control right" href="#myCarousel" data-slide="next">&rsaquo;</a>
 </div><!-- /carousel -->
-
+</div><!-- /row-fluid -->
 </div><!-- /container-fluid-->
 
 <script>
