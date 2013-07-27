@@ -2,11 +2,6 @@
 
 <div class="row-fluid">
 <div id="myCarousel" class="carousel slide">
-<!--   <ol class="carousel-indicators">
-    <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
-    <li data-target="#myCarousel" data-slide-to="1"></li>
-    <li data-target="#myCarousel" data-slide-to="2"></li>
-  </ol> -->
 
   <!-- Carousel item -->
   <div class="carousel-inner">
@@ -21,7 +16,7 @@
       <div class="span12 well">
         <div class="well">
         <h2><%= v[:name] %></h2>
-          <p>by <%= v[:poster] %> @ <%= v[:ts] %></p>
+          <p>by <%= link_to 'Best Vines', 'https://www.facebook.com/BestOfVines' %> @ <%= localtime_tag(v[:ts]) %></p>
         </div>
         
         <div align="center">
@@ -47,8 +42,9 @@
 <script>
   // using jQuery
 
-  $(document).ready(function() {      
+  $(document).ready(function() {
    $('.carousel').carousel('pause');
+   $("span.localtime").localtime();
    $('video,audio').mediaelementplayer(/* Options */);
 
    jQuery(document).bind('keyup', function(e) {
