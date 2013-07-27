@@ -1,28 +1,62 @@
 <div class="container-fluid">
 
-<% @videos.each_with_index do |v, idx| %>
-  <div class="row-fluid" id="<%= idx %>" class="video-container" >
-    <div class="span12 well">
-      <div class="well">
-      <h2><%= v[:name] %></h2>
-        <p>by <%= v[:poster] %> @ <%= v[:ts] %></p>
-      </div>
-      
-      <video width="700" height="500" controls="controls" preload="none">
-        <source type="video/mp4" src="<%= v[:source] %>" />
-        <object width="400" height="400" type="application/x-shockwave-flash" data="flashmediaelement.swf">
-          <param name="movie" value="flashmediaelement.swf" />
-          <param name="flashvars" value="controls=true&file=<%=v[:source] %>" />
-        </object>
-      </video>
-    </div>
+<div id="myCarousel" class="carousel slide">
+<!--   <ol class="carousel-indicators">
+    <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+    <li data-target="#myCarousel" data-slide-to="1"></li>
+    <li data-target="#myCarousel" data-slide-to="2"></li>
+  </ol> -->
 
-  </div><!-- /row-fluid -->
-<% end %>
+  <!-- Carousel item -->
+  <div class="carousel-inner">
+  <% @videos.each_with_index do |v, idx| %>
+    <% type = 'item' %>
+    <% if idx == 0 %>
+      <% type = 'active item' %>
+    <% end %>
+    <div class="container <%= type %>" id="<%= idx %>" >
+      <div class="span12 well">
+        <div class="well">
+        <h2><%= v[:name] %></h2>
+          <p>by <%= v[:poster] %> @ <%= v[:ts] %></p>
+        </div>
+        
+        <div align="center">
+          <video width="700" height="500" controls="controls" preload="none">
+            <source type="video/mp4" src="<%= v[:source] %>" />
+            <object width="400" height="400" type="application/x-shockwave-flash" data="flashmediaelement.swf">
+              <param name="movie" value="flashmediaelement.swf" />
+              <param name="flashvars" value="controls=true&file=<%=v[:source] %>" />
+            </object>
+          </video>
+        </div>
+      </div>
+
+    </div><!-- /row-fluid -->
+  <% end %>
+  </div><!-- /carousel inner-->
+  <a class="carousel-control left" href="#myCarousel" data-slide="prev">&lsaquo;</a>
+  <a class="carousel-control right" href="#myCarousel" data-slide="next">&rsaquo;</a>
+</div><!-- /carousel -->
 
 </div><!-- /container-fluid-->
 
 <script>
   // using jQuery
-  $('video,audio').mediaelementplayer(/* Options */);
+
+  $(document).ready(function() {      
+   $('.carousel').carousel('pause');
+   $('video,audio').mediaelementplayer(/* Options */);
+
+   jQuery(document).bind('keyup', function(e) {
+
+      if(e.keyCode==39){
+        jQuery('a.carousel-control.right').trigger('click');
+      } 
+      else if (e.keyCode==37){
+        jQuery('a.carousel-control.left').trigger('click');
+      }
+    });
+
+  });
 </script>
