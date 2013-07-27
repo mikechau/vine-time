@@ -15,24 +15,29 @@
     <div class="container <%= type %>" id="<%= idx %>" >
       <div class="span12 well">
         <div class="well">
-        <h2><%= v[:name] %></h2>
-          <p>by <%= link_to 'Best Vines', 'https://www.facebook.com/BestOfVines' %> @ <%= localtime_tag(v[:ts]) %></p>
+        <a href="<%= video_url(id: v[:id]) %>"><h2><%= v[:name] %></h2></a>
+        <p>by <%= link_to 'Best Vines', 'https://www.facebook.com/BestOfVines' %> @ <%= localtime_tag(v[:ts]) %></p>
         </div>
         
         <div align="center">
-          <video width="700" height="500" controls="controls" preload="none">
+          <video width="800" height="480" controls="controls" preload="none">
             <source type="video/mp4" src="<%= v[:source] %>" />
-            <object width="400" height="400" type="application/x-shockwave-flash" data="flashmediaelement.swf">
+            <object width="800" height="480" type="application/x-shockwave-flash" data="flashmediaelement.swf">
               <param name="movie" value="flashmediaelement.swf" />
               <param name="flashvars" value="controls=true&file=<%= v[:source] %>" />
             </object>
           </video>
         </div>
       </div>
-      <% if idx == 0 %>
-        <h6 class="note"><span class="alert">You can slide across videos by using your left or right arrow key!</span></h6>
-      <% end %>
-      <%= root_url + 'video?=' + v[:id] %>
+      
+      <form class="form-inline">
+        <a class="btn d_clip_button" data-clipboard-text='<%= video_url(id: v[:id]) %>' id='d_clip_button'>Copy</a>
+        <span class="input-xxlarge uneditable-input" id="link"><div><%= video_url(id: v[:id]) %></div></span>
+        
+        <% if idx == 0 %>
+        <span class="alert pull-right">You can slide across videos by using your left or right arrow key!</span>
+        <% end %>
+      </form>
     </div><!-- /container -->
   <% end %>
 
@@ -51,6 +56,8 @@
    $("span.localtime").localtime();
    $('video,audio').mediaelementplayer();
 
+   var clip = new ZeroClipboard($("a.d_clip_button"))
+
    function pauseVideo() {
      $('video,audio').each(function() {
        $(this)[0].pause();
@@ -61,10 +68,12 @@
 
       if(e.keyCode==39){
         pauseVideo();
+       // var clip = new ZeroClipboard($(".d_clip_button"))
         jQuery('a.carousel-control.right').trigger('click');
       } 
       else if (e.keyCode==37){
         pauseVideo();
+        // var clip = new ZeroClipboard($(".d_clip_button"))
         jQuery('a.carousel-control.left').trigger('click');
       }
     });

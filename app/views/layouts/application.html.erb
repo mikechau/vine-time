@@ -1,23 +1,30 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>VineTime</title>
+  <title>VineTime | The very best vine videos online</title>
+  <meta name="description" content="Scroll through The Best Vine videos">
+  <meta http-equiv="content-type" content="text/html;charset=UTF-8">
+  <meta name="keywords" content="vine, best vine videos, top 10 vine videos">
   <%= stylesheet_link_tag    "application", :media => "all" %>
   <%= javascript_include_tag "application" %>
   <%= csrf_meta_tags %>
 </head>
 <body>
 
-<%= nav_bar :fixed => :top, :responsive => true, :fluid => true, :brand => "Vine Time", :brand_link => root_url do %>
+<%= nav_bar :fixed => :top, :responsive => true, :fluid => true, :brand => "VineTime", :brand_link => root_url do %>
   <%= menu_group do %>
     <%= menu_divider %>
-    <%= menu_item "Home", root_path %>
+    <%= menu_item "Home", root_url %>
     <%= menu_divider %>
-    <%= menu_item "About" %>
-    <%= menu_item "Contact" %>
+    <%= menu_item "About", about_url %>
+    <%= menu_item "Contact", contact_url %>
     <%= menu_divider %>
-    <%= menu_item "Fork" %> 
+    <%= menu_item "Fork", 'https://github.com/mikechau/vine-time' %> 
+    <%= menu_divider %>
   <% end %>
+  <ul class="nav pull-right">
+    <li><a id="h1url" class="nohover"><h1 class="draft">The very best vine videos online</h1></a></li>
+  </ul>
 <% end %>
 
 <%= yield %>

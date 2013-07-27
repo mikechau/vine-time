@@ -14,4 +14,5 @@
 //= require jquery_ujs
 //= require bootstrap
 //= require mediaelement_rails
+//= require zeroclipboard
 //= require_tree .

@@ -1,31 +1,28 @@
 <div class="container-fluid">
 
 <div class="row-fluid">
-
     <div class="container">
       <div class="span12 well">
         <div class="well">
-        <h2><%= @video[:name] %></h2>
-          <p>by <%= link_to 'Best Vines', 'https://www.facebook.com/BestOfVines' %> @ <%= localtime_tag(@video[:ts]) %></p>
+        <a href="<%= video_url(id: @video[:id]) %>"><h2><%= @video[:name] %></h2></a>
+        <p>by <%= link_to 'Best Vines', 'https://www.facebook.com/BestOfVines' %> @ <%= localtime_tag(@video[:ts]) %></p>
         </div>
         
         <div align="center">
-          <video width="700" height="500" controls="controls" preload="none">
+          <video width="800" height="480" controls="controls" preload="none">
             <source type="video/mp4" src="<%= @video[:source] %>" />
-            <object width="400" height="400" type="application/x-shockwave-flash" data="flashmediaelement.swf">
+            <object width="800" height="480" type="application/x-shockwave-flash" data="flashmediaelement.swf">
               <param name="movie" value="flashmediaelement.swf" />
               <param name="flashvars" value="controls=true&file=<%= @video[:source] %>" />
             </object>
           </video>
         </div>
-        <br />
       </div>
-      
-      <div class="control-group">
-        <div class="controls">
-          Link: <span class="input-xxlarge uneditable-input"><%= root_url + 'video?=' + @video[:id] %></span>
-        </div>
-      </div>
+        <form class="form-inline">
+          <a class="btn" data-clipboard-text='<%= video_url(id: @video[:id]) %>' id='d_clip_button'>Copy</a>
+          <span class="input-xxlarge uneditable-input" id="link"><%= video_url(id: @video[:id]) %></span>
+          <%= link_to 'More Videos', root_url, :class => 'btn btn-primary pull-right' %>
+        </form>
     </div><!-- /container -->
 
 </div><!-- /row-fluid -->
@@ -34,9 +31,9 @@
 <script>
 
   $(document).ready(function() {
-
+   var clip = new ZeroClipboard($("#d_clip_button"))
    $("span.localtime").localtime();
    $('video,audio').mediaelementplayer();
-  
   });
+
 </script>

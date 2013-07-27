@@ -23,3 +23,17 @@ body { padding-top: 60px; }
 .note {
   text-align: center;
 }
+
+.draft {
+  font-size: small;
+  line-height: 0px;
+  color: gray;
+}
+
+#h1url.nohover:hover { 
+  border: 0; 
+}
+
+.lg {
+  background-color: #323232;
+}
