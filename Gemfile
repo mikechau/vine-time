@@ -53,4 +53,5 @@ gem 'jquery-rails'
 gem 'figaro'
 gem 'thin'
 gem 'rails_bootstrap_navbar'
-gem "mediaelement_rails"
+gem 'mediaelement_rails'
+gem 'zeroclipboard-rails'
