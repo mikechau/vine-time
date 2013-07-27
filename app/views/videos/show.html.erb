@@ -13,7 +13,7 @@
             <source type="video/mp4" src="<%= @video[:source] %>" />
             <object width="800" height="480" type="application/x-shockwave-flash" data="flashmediaelement.swf">
               <param name="movie" value="flashmediaelement.swf" />
-              <param name="flashvars" value="controls=true&file=<%= @video[:source] %>" />
+              <param name="flashvars" value="controls=true&amp;file=<%= @video[:source] %>" />
             </object>
           </video>
         </div>
