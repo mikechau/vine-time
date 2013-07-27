@@ -1,0 +1,42 @@
+<div class="container-fluid">
+
+<div class="row-fluid">
+
+    <div class="container">
+      <div class="span12 well">
+        <div class="well">
+        <h2><%= @video[:name] %></h2>
+          <p>by <%= link_to 'Best Vines', 'https://www.facebook.com/BestOfVines' %> @ <%= localtime_tag(@video[:ts]) %></p>
+        </div>
+        
+        <div align="center">
+          <video width="700" height="500" controls="controls" preload="none">
+            <source type="video/mp4" src="<%= @video[:source] %>" />
+            <object width="400" height="400" type="application/x-shockwave-flash" data="flashmediaelement.swf">
+              <param name="movie" value="flashmediaelement.swf" />
+              <param name="flashvars" value="controls=true&file=<%= @video[:source] %>" />
+            </object>
+          </video>
+        </div>
+        <br />
+      </div>
+      
+      <div class="control-group">
+        <div class="controls">
+          Link: <span class="input-xxlarge uneditable-input"><%= root_url + 'video?=' + @video[:id] %></span>
+        </div>
+      </div>
+    </div><!-- /container -->
+
+</div><!-- /row-fluid -->
+</div><!-- /container-fluid-->
+
+<script>
+
+  $(document).ready(function() {
+
+   $("span.localtime").localtime();
+   $('video,audio').mediaelementplayer();
+  
+  });
+</script>
