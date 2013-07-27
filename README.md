@@ -1,4 +1,4 @@
-![Screenshot](http://i.imgur.com/ZBzhqEU.png "Screenshot")
+![Screenshot](http://i.imgur.com/gu7Zwcp.png "Screenshot")
 
 # VINE-TIME  
 
