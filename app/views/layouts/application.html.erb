@@ -17,16 +17,16 @@
 </head>
 <body>
 
-<%= nav_bar :fixed => :top, :responsive => true, :fluid => true, :brand => "VineTime", :brand_link => root_url do %>
-  <%= menu_group do %>
-    <%= menu_divider %>
-    <%= menu_item "Home", root_url %>
-    <%= menu_divider %>
-    <%= menu_item "About", about_url %>
-    <%= menu_item "Contact", contact_url %>
-    <%= menu_divider %>
-    <%= menu_item "Fork", 'https://github.com/mikechau/vine-time' %> 
-    <%= menu_divider %>
+<%= navbar :fixed => :top, :responsive => true, :fluid => true, :brand => "VineTime", :brand_link => root_url do %>
+  <%= navbar_group do %>
+    <%= navbar_divider %>
+    <%= navbar_item "Home", root_url %>
+    <%= navbar_divider %>
+    <%= navbar_item "About", about_url %>
+    <%= navbar_item "Contact", contact_url %>
+    <%= navbar_divider %>
+    <%= navbar_item "Fork", 'https://github.com/mikechau/vine-time' %> 
+    <%= navbar_divider %>
   <% end %>
   <ul class="nav pull-right">
     <li><a id="h1url" class="nohover"><h1 class="draft">Best vine videos online</h1></a></li>
