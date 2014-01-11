@@ -2,7 +2,7 @@ require 'open-uri'
 
 class FbVideo
 
-  FB_URL = URI::encode("https://graph.facebook.com/170901143077174?fields=posts.limit(100).fields(source,name,type)&access_token=#{ENV['FB_APP_TOKEN']}")
+  FB_URL = URI::encode("https://graph.facebook.com/170901143077174?fields=posts.limit(5000).fields(source,name,type)&access_token=#{ENV['FB_APP_TOKEN']}")
   BASE_URL = "https://graph.facebook.com/"
   TOKEN = "&access_token=#{ENV['FB_APP_TOKEN']}"
 
@@ -35,6 +35,13 @@ class FbVideo
       name: video['name'],
       id: video['id'],
       ts: video['created_time']
+    }
+  end
+
+  def api_list
+    {
+      response: "200",
+      data: list
     }
   end
 
