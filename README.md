@@ -25,7 +25,9 @@ This is a app that pulls posts from The Best of Vine and displays all the videos
     `vagrant ssh`
 
 3. Set up Rails & Nodejs
-     `sh /vagrant/vagrant_data/scripts/setup.sh`
+
+    `sh /vagrant/vagrant_data/scripts/setup.sh`
+
 ---
 
 #### RAILS
