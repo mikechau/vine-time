@@ -13,6 +13,8 @@ This is a app that pulls posts from The Best of Vine and displays all the videos
 2. [Install Vagrant](http://www.vagrantup.com/)
 3. [Install vagrant-vbguest](https://github.com/dotless-de/vagrant-vbguest)
 
+---
+
 #### INSTALL GUIDE
 1. Start Vagrant
 
@@ -23,6 +25,8 @@ This is a app that pulls posts from The Best of Vine and displays all the videos
     `vagrant ssh`
 
 3. Set up Rails & Nodejs
+
+---
 
 #### RAILS
 ##### INSTALLATION STEPS
@@ -39,6 +43,8 @@ This is a app that pulls posts from The Best of Vine and displays all the videos
 
     `control + c`
 
+---
+
 #### MISC
 1. Shut down vagrant
 
@@ -48,12 +54,16 @@ This is a app that pulls posts from The Best of Vine and displays all the videos
 
     `vagrant suspend`
 
+---
+
 #### NOTES
 The following ports are used:
 
 - Rails server: `localhost:31337` --> `vagrant:3000`
 - Misc server: `localhost:31338` --> `vagrant:8000`
 - Misc server: `localhost:8080` --> `vagrant:80`
+
+---
 
 #### GIT WORKFLOW
 ##### Cloning the project
