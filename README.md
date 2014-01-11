@@ -73,10 +73,10 @@ The following ports are used:
 
 3. Add your changes
 
-   `git add .` - adds everything in the directory, does not include deleted files
-   `git add -A` - adds everything, including deleted files
-   `git add [filename]` - add a specific file
-   `git rm [filename]` - remove a specific file
+-   `git add .` - adds everything in the directory, does not include deleted files
+-   `git add -A` - adds everything, including deleted files
+-   `git add [filename]` - add a specific file
+-   `git rm [filename]` - remove a specific file
 
 4. Push your branch
 
