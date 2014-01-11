@@ -91,12 +91,12 @@ The following ports are used:
 
    `git rebase -i HEAD~#`, where # is the number of commits you are ahead of the develop branch
 
-The first commit should always be `pick`, and then edit the commits following to `squash`. Save and then you will be
-asked to edit the commit messages. At the top, add a comment that summarizes everything you did. Comment out any
-old comments or remove them if it makes sense to do so.
+   The first commit should always be `pick`, and then edit the commits following to `squash`. Save and then you will be
+   asked to edit the commit messages. At the top, add a comment that summarizes everything you did. Comment out any
+   old comments or remove them if it makes sense to do so.
 
 7. After the rebase, you can replace your entire pull request with the following:
 
    `git push -f`
 
-Now we have one nice commit we can merge into the `develop` branch.
+   Now we have one nice commit we can merge into the `develop` branch.
