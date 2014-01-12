@@ -125,3 +125,30 @@ The following ports are used:
    `git push -f`
 
    Now we have one nice commit we can merge into the `develop` branch.
+
+---
+
+#### VINEOSAUR
+
+##### About
+
+Since it would be a hassle to have two seperate vagrants for vine-time and vineosaur, you can just use the
+vm in vine-time to work on vineosaur. Simply clone it and go on your way, clone it into the `vagrant_data`
+folder so it is shared between the host and guest. We have `.gitignore` set up to ignore everything in
+that folder except for `scripts`. `vine-time` will be the api server feeding `vineosaur` ze dataz.
+
+##### Requirements
+
+    sudo npm install -g brunch
+    sudo npm install -g bower
+
+##### Clone the project
+
+    cd vine-time/vagrant_data/
+    git clone https://github.com/mikechau/vineosaur.git
+    cd vineosaur
+    npm install && bower install
+
+##### Getting Started
+
+    brunch watch --server
