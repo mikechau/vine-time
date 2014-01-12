@@ -144,10 +144,12 @@ that folder except for `scripts`. `vine-time` will be the api server feeding `vi
 
 ##### Clone the project
 
-    cd vine-time/vagrant_data/
+    cd your-host-local-machine-projects-folder/
     git clone https://github.com/mikechau/vineosaur.git
     cd vineosaur
     npm install && bower install
+
+Note, the `Vagrantfile` is configured to share `vineosaur`, it must exist in the folder above `vine-time`.
 
 ##### Getting Started
 
