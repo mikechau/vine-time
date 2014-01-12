@@ -19,3 +19,7 @@
 
 # Ignore vagrant metadata
 /.vagrant
+
+# Ignore anything inside vagrant_data
+/vagrant_data/*
+!/vagrant_data/script/*
