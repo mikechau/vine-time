@@ -67,6 +67,16 @@ The following ports are used:
 ---
 
 #### GIT WORKFLOW
+##### Setting up git
+
+    git config --global user.name "John Doe"
+    git config --global user.email "john@doe.com"
+    git config --global credential.helper 'cache --timeout=3600'
+    git config --global color.ui true
+    git config --global push.default current
+
+    `color.ui` could be `auto`, and `push.default` should be `simple` on `git 1.7.11+`.
+
 ##### Cloning the project
 
     git clone https://github.com/mikechau/vine-time.git
