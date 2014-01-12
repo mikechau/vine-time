@@ -61,18 +61,17 @@ This is a app that pulls posts from The Best of Vine and displays all the videos
 #### NOTES
 The following ports are used:
 
-- Rails server: `localhost:31337` --> `vagrant:3000`
-- Misc server: `localhost:31338` --> `vagrant:8000`
-- Misc server: `localhost:8080` --> `vagrant:80`
+- Rails server: `localhost:3000` --> `vagrant:3000`
+- Brunch server: `localhost:3333` --> `vagrant:3333`
 
 ---
 
 #### GIT WORKFLOW
 ##### Cloning the project
 
-    `git clone https://github.com/mikechau/vine-time.git`
-    `cd vine-time`
-    `git checkout develop`
+    git clone https://github.com/mikechau/vine-time.git
+    cd vine-time
+    git checkout develop
 
 ##### Workflow
 1. When implementing a new feature, branch off from develop
