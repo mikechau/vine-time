@@ -77,6 +77,10 @@ The following ports are used:
 
 `color.ui` could be `auto`, and `push.default` should be `simple` on `git 1.7.11+`.
 
+##### Generating ssh keys
+
+[Github Tutorial](https://help.github.com/articles/generating-ssh-keys)
+    
 ##### Cloning the project
 
     git clone https://github.com/mikechau/vine-time.git
