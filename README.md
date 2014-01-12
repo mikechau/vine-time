@@ -75,7 +75,7 @@ The following ports are used:
     git config --global color.ui true
     git config --global push.default current
 
-    `color.ui` could be `auto`, and `push.default` should be `simple` on `git 1.7.11+`.
+`color.ui` could be `auto`, and `push.default` should be `simple` on `git 1.7.11+`.
 
 ##### Cloning the project
 
