@@ -3,6 +3,7 @@ class VideosController < ApplicationController
   before_filter :set_headers
 
   caches_action :index, :expires_in => 15.minutes
+  caches_action :index, :expires_in => 1.hour
   caches_action :show, :cache_path => Proc.new { |c| c.params }, :expires_in => 1.hour
 
   def index
